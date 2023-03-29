@@ -1,0 +1,107 @@
+$border: 1px solid rgb(209, 208, 208);
+$color-blue: rgb(24, 125, 241);
+$color-white: #E7EBF0;
+
+body {
+  background: $color-white;
+}
+
+.wrapper {
+  border-right: $border;
+  border-bottom: $border;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 30px;
+}
+
+.App {
+  display: flex;
+  flex-direction: row;
+  padding-top: 100px;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+.cell {
+  border-top: $border;
+  border-left: $border;
+  transition-duration: .3s;
+  background: white;
+  &.hovered {
+    background: $color-blue;
+    transition-duration: .3s;
+  }
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+}
+
+.history {
+  margin-left: 40px;
+  &-wrapper {
+    height: 50px;
+    width: 200px;
+    font-size: 14px;
+    background: #FBF8E3;
+    color: #907544;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 50px;
+    padding-left: 10px;
+    border: 1px solid rgb(165, 135, 80);
+    border-radius: 3px;
+  }
+  h2 {
+    margin-top: 0;
+    line-height: 1;
+    margin-bottom: 34px;
+  }
+}
+
+select {
+  padding: 5px 10px;
+  margin-right: 10px;
+  width: 130px;
+}
+button {
+  background: $color-blue;
+  color: white;
+  border: none;
+  line-height: 29px;
+  padding: 0 15px;
+  border-radius: 2px;
+}
+
+.preloader {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid $color-blue;
+  margin: calc(50vh - 150px) auto 0;
+  position: relative;
+  animation: rotation 1s infinite ease-in-out;
+  &::after {
+    content: ' ';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    width: 75px;
+    height: 75px;
+    background: $color-white;
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
