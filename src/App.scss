@@ -45,6 +45,7 @@ main {
 
 .history {
   margin-left: 40px;
+  width: 212px;
   &-wrapper {
     height: 50px;
     width: 200px;
@@ -69,6 +70,7 @@ select {
   padding: 5px 10px;
   margin-right: 10px;
   width: 130px;
+  cursor: pointer;
 }
 button {
   background: $color-blue;
@@ -77,6 +79,7 @@ button {
   line-height: 29px;
   padding: 0 15px;
   border-radius: 2px;
+  cursor: pointer;
 }
 
 .preloader {

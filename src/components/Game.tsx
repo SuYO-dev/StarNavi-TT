@@ -15,23 +15,29 @@ interface GameProps {
 const Game: FC<GameProps> = ({ data }) => {
 
   const initialValue: IData = {
-    name: 'Pick mode',
+    name: '',
     field: 0,
     id: '0'
   }
   const history = useContext(CellContext);
   const [state, setState] = useState<IData>(initialValue)
+  const [selectedState, setSelectedState] = useState<IData>(initialValue)
   const [selectValue, setSelectValue] = useState<string>('')
+
 
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const index = data.findIndex((item) => item.name === event.target.value)
-    setState(initialValue)
+    setSelectedState(data[index])
     setSelectValue(event.target.value)
-    setTimeout(() => {
-      setState(data[index])
-    }, 1)
-    history.clearHistory()
+  }
 
+  const handleClick = () => {
+    history.clearHistory()
+    setState(initialValue)
+    setTimeout(() => {
+      setState(selectedState)
+    }, 1)
+    
   }
 
   return (
@@ -44,7 +50,7 @@ const Game: FC<GameProps> = ({ data }) => {
             <option value={i.name} key={key}>{i.name}</option>
           ))}
         </select>
-        <button>
+        <button onClick={handleClick}>
           START
         </button>
 
