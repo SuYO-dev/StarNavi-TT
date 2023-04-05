@@ -1,9 +1,9 @@
 import React, { FC, useContext } from 'react'
-import { CellContext } from '../services/context.service';
+import { CellContext, ICellInterface } from '../services/context.service';
 
 
 const HistoryWrapper: FC = () => {
-  const data = useContext(CellContext);
+  const data = useContext<ICellInterface>(CellContext);
 
 
   return (<div className='history'>

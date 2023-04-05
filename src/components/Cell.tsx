@@ -1,5 +1,5 @@
 import { FC, useContext, useState } from 'react'
-import { CellContext } from '../services/context.service';
+import { CellContext, ICellInterface } from '../services/context.service';
 
 type Props = {
   rowID: number;
@@ -9,7 +9,7 @@ type Props = {
 
 const Cell: FC<Props> = ({ rowID, cellID, size }) => {
   const [isHovered, setIsHovered] = useState<boolean>(false);
-  const history = useContext(CellContext);
+  const history = useContext<ICellInterface>(CellContext);
   const styles = {
     width: 200 / size + 'px',
     height: 200 / size + 'px',

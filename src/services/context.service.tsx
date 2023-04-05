@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, createContext, useState } from "react";
 
-interface ICellInterface {
+export interface ICellInterface {
     cellHistory: string[];
     addHistory: (newValue: string) => void;
     clearHistory: () => void;

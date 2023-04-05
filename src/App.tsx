@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
     fetch("https://60816d9073292b0017cdd833.mockapi.io/modes")
-      .then(res => res.json())
+      .then(res => res.json() as Promise<IData[]>)
       .then( result => {
           setData(result);
         }
